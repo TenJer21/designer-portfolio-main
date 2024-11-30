@@ -1,32 +1,23 @@
-// src/router/index.js
-
-import { createRouter, createWebHistory } from 'vue-router'
-import AppView from '../App.vue'
-import LoginPage from '../LoginPage.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import Login from "../LoginPage.vue";
+import Home from "../Home.vue"; // This would be the component for your current App.vue content
 
 const routes = [
   {
-    path: '/',
-    name: 'App',
-    component: AppView,
-    children: [
-      {
-        path: '',
-        name: 'Home',
-        // Add child routes here if needed
-      }
-    ]
+    path: "/",
+    name: "Login",
+    component: Login,
   },
   {
-    path: '/login',
-    name: 'LoginPage',
-    component: LoginPage
-  }
-]
+    path: "/home",
+    name: "Home",
+    component: Home,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
